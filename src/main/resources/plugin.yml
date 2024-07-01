@@ -1,0 +1,6 @@
+name: FanNewbieGift
+version: '${project.version}'
+main: cn.newworld.fannewbiegift.FanNewbieGift
+authors: [EatFan]
+description: 饭式新手礼包插件
+website: eatfans.github.io

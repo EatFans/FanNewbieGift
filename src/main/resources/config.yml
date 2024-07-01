@@ -1,0 +1,35 @@
+# Plugin: FanNewbieGift
+# Author：EatFan
+# Version: 1.0
+
+# plugin setting
+
+
+
+
+# newbie gift setting
+newbieGift:
+  title: "新手礼包"
+  size: 9
+  items:
+    - name: "点击给一个钻石"
+      material: "DIAMOND"
+      amount: 1
+      slot: 0
+      lore:
+        - "一个钻石"
+      commands:
+        - "give %player diamond"
+
+    - name: "点击给一个金苹果"
+      material: "GOLDEN_APPLE"
+      amount: 1
+      slot: 1
+      lore:
+        - "一个金苹果"
+      commands:
+        - "give %player% golden_apple"
+
+# List of users who have received the novice gift pack
+userList:
+  - "922ce5dd-5940-32a7-be81-d82f7a00a9ee"
