@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
 
 /**
  * 容器管理者
@@ -29,9 +30,9 @@ public class InventoryManager {
     }
 
     public boolean initInventory() {
-        if (!dataManager.loadData()) {
-            return false;
-        }
+//        if (!dataManager.loadData()) {
+//            return false;
+//        }
 
         NewbieGift newbieGift = dataManager.getNewbieGift();
         Inventory newbieGiftInventory = createNewbieGiftInventory(newbieGift);
@@ -84,4 +85,24 @@ public class InventoryManager {
         return inventories.get(inventoryName);
     }
 
+    /**
+     * 获取容器中所有的物品
+     * @param inventoryName 容器的名字
+     * @return 返回List<ItemStack></ItemStack>
+     */
+    public List<ItemStack> getItems(String inventoryName){
+        Inventory newbieGift = inventories.get("newbieGift");
+        if (newbieGift == null){
+            plugin.getLogger().log(Level.WARNING, "Inventory " + inventoryName + " not found.");
+            return null;
+        }
+
+        List<ItemStack> items = new ArrayList<>();
+        for (ItemStack item : newbieGift.getContents()){
+            if (item != null){
+                items.add(item);
+            }
+        }
+        return items;
+    }
 }

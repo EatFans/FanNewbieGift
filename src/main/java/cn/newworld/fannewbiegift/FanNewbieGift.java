@@ -2,6 +2,7 @@ package cn.newworld.fannewbiegift;
 
 import cn.newworld.fannewbiegift.listeners.InventoryEventListener;
 import cn.newworld.fannewbiegift.manager.ConfigManager;
+import cn.newworld.fannewbiegift.manager.DataManager;
 import cn.newworld.fannewbiegift.manager.InventoryManager;
 import cn.newworld.fannewbiegift.listeners.PlayerEventListener;
 import org.bukkit.ChatColor;
@@ -10,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FanNewbieGift extends JavaPlugin {
     private InventoryManager inventoryManager;
-
+    private DataManager dataManager;
     private ConfigManager configManager;
 
     public void log(String message){
@@ -44,9 +45,9 @@ public final class FanNewbieGift extends JavaPlugin {
         log("&b插件正在启动中...");
 
         // 初始化
-        inventoryManager = new InventoryManager(this);
         configManager = new ConfigManager(this);
-
+        dataManager = new DataManager(this);
+        inventoryManager = new InventoryManager(this);
 
         if (inventoryManager.initInventory()){
             log("&a新手礼包 &b初始化加载成功！");
@@ -78,7 +79,7 @@ public final class FanNewbieGift extends JavaPlugin {
     private void registerEvents() {
         // 注册事件监听器
         getServer().getPluginManager().registerEvents(new PlayerEventListener(this),this);
-        getServer().getPluginManager().registerEvents(new InventoryEventListener(),this);
+        getServer().getPluginManager().registerEvents(new InventoryEventListener(this),this);
     }
     public InventoryManager getInventoryManager(){
         return inventoryManager;
@@ -86,5 +87,9 @@ public final class FanNewbieGift extends JavaPlugin {
 
     public ConfigManager getConfigManager(){
         return configManager;
+    }
+
+    public DataManager getDataManager(){
+        return dataManager;
     }
 }

@@ -1,8 +1,14 @@
 package cn.newworld.fannewbiegift.manager;
 
 import cn.newworld.fannewbiegift.FanNewbieGift;
+import cn.newworld.fannewbiegift.entity.Item;
 import cn.newworld.fannewbiegift.entity.NewbieGift;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
 public class DataManager {
@@ -14,6 +20,9 @@ public class DataManager {
     public DataManager(FanNewbieGift plugin) {
         this.plugin = plugin;
         this.configManager = new ConfigManager(plugin);
+        if (!loadData()){
+            plugin.log("&c数据加载失败！");
+        }
     }
 
     /**
@@ -27,7 +36,6 @@ public class DataManager {
             return false;
         }
 
-        // You can add more data loading here if needed
 
         return true;
     }
@@ -39,4 +47,5 @@ public class DataManager {
     public NewbieGift getNewbieGift() {
         return newbieGift;
     }
+
 }

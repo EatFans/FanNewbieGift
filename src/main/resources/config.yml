@@ -9,24 +9,24 @@
 
 # newbie gift setting
 newbieGift:
-  title: "新手礼包"
+  title: "&e&l新手礼包"
   size: 9
   items:
-    - name: "点击给一个钻石"
+    - name: "&e点击给一个钻石"
       material: "DIAMOND"
       amount: 1
       slot: 0
       lore:
-        - "一个钻石"
+        - "&a一个钻石"
       commands:
-        - "give %player diamond"
+        - "give %player% diamond"
 
-    - name: "点击给一个金苹果"
+    - name: "&e点击给一个金苹果"
       material: "GOLDEN_APPLE"
       amount: 1
       slot: 1
       lore:
-        - "一个金苹果"
+        - "&a一个金苹果"
       commands:
         - "give %player% golden_apple"
 
