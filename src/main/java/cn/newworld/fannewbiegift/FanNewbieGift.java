@@ -1,5 +1,6 @@
 package cn.newworld.fannewbiegift;
 
+import cn.newworld.fannewbiegift.listeners.InventoryEventListener;
 import cn.newworld.fannewbiegift.manager.ConfigManager;
 import cn.newworld.fannewbiegift.manager.InventoryManager;
 import cn.newworld.fannewbiegift.listeners.PlayerEventListener;
@@ -77,7 +78,7 @@ public final class FanNewbieGift extends JavaPlugin {
     private void registerEvents() {
         // 注册事件监听器
         getServer().getPluginManager().registerEvents(new PlayerEventListener(this),this);
-
+        getServer().getPluginManager().registerEvents(new InventoryEventListener(),this);
     }
     public InventoryManager getInventoryManager(){
         return inventoryManager;

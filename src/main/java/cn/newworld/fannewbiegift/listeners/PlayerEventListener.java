@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 
+
 public class PlayerEventListener implements Listener {
     private final FanNewbieGift plugin;
 
@@ -28,4 +29,5 @@ public class PlayerEventListener implements Listener {
         });
 
     }
+
 }

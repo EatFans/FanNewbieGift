@@ -1,9 +1,8 @@
 package cn.newworld.fannewbiegift.manager;
 
 import cn.newworld.fannewbiegift.FanNewbieGift;
-import cn.newworld.fannewbiegift.data.Item;
-import cn.newworld.fannewbiegift.data.NewbieGift;
-import org.bukkit.ChatColor;
+import cn.newworld.fannewbiegift.entity.Item;
+import cn.newworld.fannewbiegift.entity.NewbieGift;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 

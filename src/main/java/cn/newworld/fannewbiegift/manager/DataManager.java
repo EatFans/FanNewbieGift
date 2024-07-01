@@ -1,7 +1,7 @@
 package cn.newworld.fannewbiegift.manager;
 
 import cn.newworld.fannewbiegift.FanNewbieGift;
-import cn.newworld.fannewbiegift.data.NewbieGift;
+import cn.newworld.fannewbiegift.entity.NewbieGift;
 
 import java.util.logging.Level;
 

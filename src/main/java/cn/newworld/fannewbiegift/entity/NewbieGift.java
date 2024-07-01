@@ -1,4 +1,4 @@
-package cn.newworld.fannewbiegift.data;
+package cn.newworld.fannewbiegift.entity;
 
 import java.util.List;
 
