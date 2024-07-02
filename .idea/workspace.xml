@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb3f7773-eaa1-49d8-a174-5be6b05f70e6" name="更改" comment="实现主要功能，准备添加papi插件依赖 by EatFan on 2024/7/2">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/userList.yml" afterDir="false" />
+    <list default="true" id="cb3f7773-eaa1-49d8-a174-5be6b05f70e6" name="更改" comment="添加用户列表用户功能 by EatFan on 2024/7/2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/FanNewbieGift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/FanNewbieGift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/manager/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/manager/ConfigManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/manager/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/manager/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/manager/InventoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/newworld/fannewbiegift/manager/InventoryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719822274848</updated>
       <workItem from="1719822275404" duration="2484000" />
-      <workItem from="1719825014654" duration="33367000" />
+      <workItem from="1719825014654" duration="33620000" />
     </task>
     <task id="LOCAL-00001" summary="插件数据部分完成 by EatFan on 2024/7/1">
       <option name="closed" value="true" />
@@ -129,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719863562908</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加用户列表用户功能 by EatFan on 2024/7/2">
+      <option name="closed" value="true" />
+      <created>1719901197968</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719901197968</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +143,7 @@
     <MESSAGE value="插件数据部分完成 by EatFan on 2024/7/1" />
     <MESSAGE value="添加README by EatFan on 2024/7/2" />
     <MESSAGE value="实现主要功能，准备添加papi插件依赖 by EatFan on 2024/7/2" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现主要功能，准备添加papi插件依赖 by EatFan on 2024/7/2" />
+    <MESSAGE value="添加用户列表用户功能 by EatFan on 2024/7/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加用户列表用户功能 by EatFan on 2024/7/2" />
   </component>
 </project>

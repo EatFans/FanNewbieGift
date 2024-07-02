@@ -63,11 +63,11 @@ public final class FanNewbieGift extends JavaPlugin {
         for (String string : userList){
             log(string);
         }
-        boolean addUserList = dataManager.addUserList("fdhjaskefheuiqe231321321");
-        if (addUserList)
-            log("成功添加用户");
+        boolean reduceUserList = dataManager.reduceUserList("fdhjaskefheuiqe231321321");
+        if (reduceUserList)
+            log("成功删除用户");
         else
-            log("添加用户失败");
+            log("删除用户失败");
 
         registerEvents();
         log("&a事件监听器 &b注册完毕！");

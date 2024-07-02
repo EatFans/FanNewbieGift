@@ -78,6 +78,15 @@ public class DataManager {
         } else {
             return false;
         }
+    }
 
+    public boolean reduceUserList(String userUUID){
+        if (userList.contains(userUUID)){
+            userList.remove(userUUID);
+            configManager.saveUserList(userList);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
