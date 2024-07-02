@@ -75,12 +75,10 @@ public class InventoryEventListener implements Listener {
             // 如果玩家点击的是自己物品栏，同样取消点击
             if (clickedInventory.getType() == InventoryType.PLAYER){
                 event.setCancelled(true);
-                player.playSound(player.getLocation(),Sound.ENTITY_ENDERMEN_HURT,1.0f,1.0f);
             }
             // 如果玩家点击的是新手礼包部分，取消点击
             if (clickedInventory.equals(newbieGift)){
                 event.setCancelled(true);
-                player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BELL,1.0f,1.0f);
                 clickItem(player,currentItem);
                 player.closeInventory();
             }
@@ -99,17 +97,14 @@ public class InventoryEventListener implements Listener {
                 if (itemMeta == null) {
                     continue;
                 }
-                String itemName = itemMeta.getDisplayName();
                 Material itemType = item.getType();
-
                 for (Item itemData : itemsData){
-                    if (itemName.equalsIgnoreCase(itemData.getName())){
-                        if (itemType.equals(itemData.getMaterial())){
-                            executeCommandAsConsole(itemData.getCommands());
+                    if (itemType.equals(itemData.getMaterial())){
+                        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BELL,1.0f,1.0f);
+                        executeCommandAsConsole(itemData.getCommands());
+                        dataManager.addUserList(player.getUniqueId().toString());
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&f&l[ &e提示 &f&l] &6成功领取 &a"+itemData.getName()+" &6!"));
 
-                            player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&f&l[ &e提示 &f&l] &6成功领取 &a"+itemName+" &6!"));
-
-                        }
                     }
                 }
 

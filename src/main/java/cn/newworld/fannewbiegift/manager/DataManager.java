@@ -74,6 +74,7 @@ public class DataManager {
         if (!userList.contains(userUUID)){
             userList.add(userUUID);
             configManager.saveUserList(userList);
+            plugin.log("&a 玩家 uuid为&e"+userUUID+"&a成功领取新手礼包！已经添加进入已领取用户列表！");
             return true;
         } else {
             return false;

@@ -49,9 +49,9 @@ public final class FanNewbieGift extends JavaPlugin {
         log("&b插件正在启动中...");
 
         // 初始化
+        inventoryManager = new InventoryManager(this);
         configManager = new ConfigManager(this);
         dataManager = new DataManager(this);
-        inventoryManager = new InventoryManager(this);
 
         if (inventoryManager.initInventory()){
             log("&a新手礼包 &b初始化加载成功！");

@@ -37,7 +37,7 @@ public class ConfigManager {
             return null;
         }
 
-        List<Item> itemList = loadItems(items);
+        List<Item> itemList = getItems(items);
         if (itemList == null) {
             plugin.getLogger().log(Level.WARNING, "Failed to load newbieGift items. Check configuration file.");
             return null;
@@ -46,7 +46,7 @@ public class ConfigManager {
         return new NewbieGift(title, size, itemList);
     }
 
-    private List<Item> loadItems(List<Map<?, ?>> items) {
+    private List<Item> getItems(List<Map<?, ?>> items) {
         List<Item> itemList = new ArrayList<>();
 
         for (Map<?, ?> item : items) {
