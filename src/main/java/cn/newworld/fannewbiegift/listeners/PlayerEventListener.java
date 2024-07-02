@@ -8,6 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 
+import java.util.List;
+
 
 public class PlayerEventListener implements Listener {
     private final FanNewbieGift plugin;
@@ -24,7 +26,11 @@ public class PlayerEventListener implements Listener {
         Bukkit.getScheduler().runTask(plugin, () -> {
             Inventory newbieGift = plugin.getInventoryManager().getInventory("newbieGift");
             if (newbieGift != null) {
-                player.openInventory(newbieGift);
+                List<String> userList = plugin.getDataManager().getUserList();
+                if (!userList.contains(player.getUniqueId().toString())){
+                    player.openInventory(newbieGift);
+
+                }
             }
         });
 

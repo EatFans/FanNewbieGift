@@ -59,16 +59,6 @@ public final class FanNewbieGift extends JavaPlugin {
             log("&c新手礼包 初始化加载失败！请检查配置文件或其他地方是否正确！");
         }
 
-        List<String> userList = dataManager.getUserList();
-        for (String string : userList){
-            log(string);
-        }
-        boolean reduceUserList = dataManager.reduceUserList("fdhjaskefheuiqe231321321");
-        if (reduceUserList)
-            log("成功删除用户");
-        else
-            log("删除用户失败");
-
         registerEvents();
         log("&a事件监听器 &b注册完毕！");
 
@@ -84,10 +74,6 @@ public final class FanNewbieGift extends JavaPlugin {
     public void onDisable() {
         log("&c插件正在卸载中...");
 
-        List<String> userList = dataManager.getUserList();
-        for (String string : userList){
-            log(string);
-        }
 
         HandlerList.unregisterAll();
         log("&c插件已经卸载！感谢使用！");
