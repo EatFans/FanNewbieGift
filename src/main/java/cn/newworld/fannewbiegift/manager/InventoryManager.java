@@ -30,10 +30,6 @@ public class InventoryManager {
     }
 
     public boolean initInventory() {
-//        if (!dataManager.loadData()) {
-//            return false;
-//        }
-
         NewbieGift newbieGift = dataManager.getNewbieGift();
         Inventory newbieGiftInventory = createNewbieGiftInventory(newbieGift);
 

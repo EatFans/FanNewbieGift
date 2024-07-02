@@ -9,6 +9,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.util.List;
+
 public final class FanNewbieGift extends JavaPlugin {
     private InventoryManager inventoryManager;
     private DataManager dataManager;
@@ -23,6 +26,7 @@ public final class FanNewbieGift extends JavaPlugin {
     public void onEnable() {
         String version = getDescription().getVersion();
         saveDefaultConfig();
+        saveUserListConfig();
         log(" ");
         log("========================================================================");
         log(" ");
@@ -55,6 +59,16 @@ public final class FanNewbieGift extends JavaPlugin {
             log("&c新手礼包 初始化加载失败！请检查配置文件或其他地方是否正确！");
         }
 
+        List<String> userList = dataManager.getUserList();
+        for (String string : userList){
+            log(string);
+        }
+        boolean addUserList = dataManager.addUserList("fdhjaskefheuiqe231321321");
+        if (addUserList)
+            log("成功添加用户");
+        else
+            log("添加用户失败");
+
         registerEvents();
         log("&a事件监听器 &b注册完毕！");
 
@@ -64,12 +78,26 @@ public final class FanNewbieGift extends JavaPlugin {
         log("&a插件 &b启动完毕！");
     }
 
+
+
     @Override
     public void onDisable() {
         log("&c插件正在卸载中...");
 
+        List<String> userList = dataManager.getUserList();
+        for (String string : userList){
+            log(string);
+        }
+
         HandlerList.unregisterAll();
         log("&c插件已经卸载！感谢使用！");
+    }
+
+    private void saveUserListConfig(){
+        File userListFile = new File(getDataFolder(), "userList.yml");
+        if (!userListFile.exists()){
+            saveResource("userList.yml",false);
+        }
     }
 
     private void registerCommands() {
@@ -81,6 +109,9 @@ public final class FanNewbieGift extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerEventListener(this),this);
         getServer().getPluginManager().registerEvents(new InventoryEventListener(this),this);
     }
+
+
+
     public InventoryManager getInventoryManager(){
         return inventoryManager;
     }

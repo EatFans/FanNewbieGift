@@ -5,7 +5,10 @@ import cn.newworld.fannewbiegift.entity.Item;
 import cn.newworld.fannewbiegift.entity.NewbieGift;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,10 +17,14 @@ import java.util.logging.Level;
 public class ConfigManager {
     private final FanNewbieGift plugin;
     private final FileConfiguration config;
+    private final File userListFile;
+    private final YamlConfiguration userListConfig;
 
     public ConfigManager(FanNewbieGift plugin) {
         this.plugin = plugin;
         this.config = plugin.getConfig();
+        this.userListFile = new File(plugin.getDataFolder(), "userList.yml");
+        this.userListConfig = YamlConfiguration.loadConfiguration(userListFile);
     }
 
     public NewbieGift loadNewbieGift() {
@@ -30,7 +37,7 @@ public class ConfigManager {
             return null;
         }
 
-        List<Item> itemList = getItems(items);
+        List<Item> itemList = loadItems(items);
         if (itemList == null) {
             plugin.getLogger().log(Level.WARNING, "Failed to load newbieGift items. Check configuration file.");
             return null;
@@ -39,7 +46,7 @@ public class ConfigManager {
         return new NewbieGift(title, size, itemList);
     }
 
-    private List<Item> getItems(List<Map<?, ?>> items) {
+    private List<Item> loadItems(List<Map<?, ?>> items) {
         List<Item> itemList = new ArrayList<>();
 
         for (Map<?, ?> item : items) {
@@ -61,4 +68,20 @@ public class ConfigManager {
 
         return itemList;
     }
+
+    public List<String> loadUserList(){
+        return userListConfig.getStringList("userList");
+    }
+
+    public void saveUserList(List<String> users) {
+        userListConfig.set("userList", users);
+        try {
+            userListConfig.save(userListFile);
+        } catch (IOException e) {
+            plugin.getLogger().log(Level.SEVERE, "Could not save userList.yml", e);
+        }
+    }
+
+
+
 }
